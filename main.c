@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
         int firstT = 1, stringParity = 0;
         while ((c = fgetc(fp)) != EOF)
         {
-            if (c == 34 && bc != 92) // check for string
+            if (c == 34 && bc != 92) // check for string issues
             {
                 stringParity++;
             }
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
         }
 
         // treat file
-        
+
 
 
 
