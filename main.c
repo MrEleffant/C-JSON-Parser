@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include "parsef.h"
 
 int main(int argc, char *argv[])
 {
-    // print all argv
-    printf("Coucou");
+    printf("C Project");
     for (int i = 1; i < argc; i++)
     {
+        // print all argv
         printf("\nargv[%d] = %s", i, argv[i]);
         FILE *fp = fopen(argv[i], "r");
         if (fp == NULL)
@@ -13,15 +14,23 @@ int main(int argc, char *argv[])
             printf("\nError: cannot open file %s", argv[i]);
             return 1;
         }
-        char c;
 
         // checking the file
         // checking for first and last char to be '[' and ']'
-        char lastC, firstC, bc;
+        char lastC, firstC, pc, c;
         int firstT = 1, stringParity = 0;
+
+        int virgCount = 0;
         while ((c = fgetc(fp)) != EOF)
         {
-            if (c == 34 && bc != 92) // check for string issues
+            if(c == ',') {
+                virgCount++;
+                printf("\n");
+            } else {
+                printf("%c", c);
+            }
+
+            if (c == 34 && pc != 92) // check for string issues
             {
                 stringParity++;
             }
@@ -32,6 +41,8 @@ int main(int argc, char *argv[])
             }
             firstT = 0;
             lastC = c;
+
+            pc = c;
         }
         if (firstC != '[' || lastC != ']')
         {
@@ -40,13 +51,11 @@ int main(int argc, char *argv[])
         }
         if (stringParity % 2 != 0)
         {
-            printf("\nError: file %s is not a valid JSON file\nString issue ", argv[i]);
+            printf("\nError: file %s is not a valid JSON file\nString issue", argv[i]);
             return 1;
         }
 
-        // treat file
-
-
+        
 
 
         fclose(fp);
