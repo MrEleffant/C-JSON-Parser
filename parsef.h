@@ -1,5 +1,6 @@
 #ifndef PARSE_H
 #define PARSE_H
+
 enum type
 {
     STRING,
@@ -11,14 +12,10 @@ enum type
 struct DATASTRUCT
 {
     char *data;
-    enum type type;
+    char type;
     struct DATASTRUCT *next;
-
 } typedef dataStruct;
 
-
-// ajouter un élément à la liste
-void ajouterElement(dataStruct *data);
-void lireListe(dataStruct *data);
+void print_elements(dataStruct *head);
 
 #endif

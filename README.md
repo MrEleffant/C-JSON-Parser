@@ -45,3 +45,27 @@ Si le programme fonctionne et respecte les contraintes, note max 15/20.
 5 points sont sur la gestion des cas d’erreurs.
 3 points peuvent être retirés, si le code n’est pas formaté correctement, s’il est
 anormalement complexe ou difficile à lire.
+
+## Rendu
+Ce projet est un programme en C qui prend un ou plusieurs noms de fichiers en tant qu'arguments de ligne de commande, lit le contenu de chaque fichier et analyse le contenu en tant que liste d'éléments. Chaque élément peut être un booléen, un entier, un flottant ou une chaîne. Le programme stocke ensuite le type et la valeur de l'élément dans une liste chaînée, et appelle une fonction pour afficher les éléments. Enfin, il libère la mémoire allouée pour la liste chaînée.
+
+Utilisation
+Pour utiliser ce programme, vous devez d'abord compiler le fichier source en utilisant un compilateur C tel que GCC. Vous pouvez le faire en utilisant la commande suivante :
+
+```
+gcc main.c -o main
+```
+Une fois compilé, vous pouvez exécuter le programme en ligne de commande en lui donnant les noms de fichiers en tant qu'arguments :
+
+```
+.\main "./inputs/fichier1.json" ... "./inputs/fichierN.json"
+```
+Le programme va alors lire le contenu de chaque fichier et afficher les éléments dans la console.
+
+Note
+Il est important de noter que le format attendu pour les fichiers en entrée est une liste d'éléments séparés par des virgules et encadrés par des crochets, comme ceci :
+
+```
+[true, 123, 4.56, "hello"]
+```
+Si le format n'est pas respecté, le programme pourrait ne pas fonctionner correctement.
