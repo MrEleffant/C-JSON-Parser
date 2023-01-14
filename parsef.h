@@ -1,14 +1,6 @@
 #ifndef PARSE_H
 #define PARSE_H
 
-enum type
-{
-    STRING,
-    INTEGER,
-    FLOAT,
-    BOOLEAN
-};
-
 struct DATASTRUCT
 {
     char *data;
