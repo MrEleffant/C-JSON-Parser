@@ -8,6 +8,8 @@
 int main(int argc, char *argv[])
 {
     printf("C Project");
+
+    // 
     for (int i = 1; i < argc; i++)
     {
         // print all argv
@@ -140,7 +142,6 @@ void print_elements(dataStruct *head)
     while (current != NULL)
     {
         dataStruct *next = current->next;
-        free(current->data);
         free(current);
         current = next;
     }
