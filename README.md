@@ -62,10 +62,26 @@ Une fois compilé, vous pouvez exécuter le programme en ligne de commande en lu
 ```
 Le programme va alors lire le contenu de chaque fichier et afficher les éléments dans la console.
 
-Note
-Il est important de noter que le format attendu pour les fichiers en entrée est une liste d'éléments séparés par des virgules et encadrés par des crochets, comme ceci :
+Commmande de compilation et d'exécution
+```sh
+gcc main.c -o main.exe && ./main.exe "./inputs/fichier1.json" "./inputs/fichier2.json"
+```
+```powershell
+if ($?) { gcc main.c -o main} ; if ($?) { .\main "./inputs/fichier1.json"}
+```
 
-```
-[true, 123, 4.56, "hello"]
-```
-Si le format n'est pas respecté, le programme pourrait ne pas fonctionner correctement.
+### Note
+- Wall ne remonte aucune érreur  
+- Il est important de noter que le format attendu pour les fichiers en entrée est une liste d'éléments séparés par des virgules et encadrés par des crochets, comme ceci :
+    ```
+    [true, 123, 4.56, "hello"]
+    ```
+    Si le format n'est pas respecté, le programme pourrait ne pas fonctionner correctement.
+
+### Gestion des Erreurs
+- Possibilité de parser plusieurs fichiers
+- La détection des booleans n'est pas case sensitive.
+- Le programme retourne une erreur si le fichier n'existe pas ou s'il n'est pas accessible.
+- les nombres flottants .5 et 5. sont acceptés.
+- chaques arguments est trim sur la gauche (gestiond des espaces superflus)
+- Gestion des gros fichiers (Testé avec 3Mo, 187k structures)
