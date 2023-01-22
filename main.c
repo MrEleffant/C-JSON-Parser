@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    printf("C Parser\n");
+    printf("C JSON Parser\n");
     for (int i = 1; i < argc; i++)
     {
         // Affichage du nom du fichier
