@@ -83,5 +83,5 @@ if ($?) { gcc main.c -o main} ; if ($?) { .\main "./inputs/fichier1.json"}
 - La détection des booleans n'est pas case sensitive.
 - Le programme retourne une erreur si le fichier n'existe pas ou s'il n'est pas accessible.
 - les nombres flottants .5 et 5. sont acceptés.
-- chaques arguments est trim sur la gauche (gestiond des espaces superflus)
+- chaques arguments est trim sur la gauche (gestion des espaces superflus)
 - Gestion des gros fichiers (Testé avec 3Mo, 187k structures)
