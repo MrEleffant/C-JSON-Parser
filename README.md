@@ -1,4 +1,4 @@
-# C Project
+# C JSON Parser
 ## Sujet
 Réaliser un parser (analyser) de fichier.
 Le fichier sera un fichier au format texte. Le contenu du fichier de sera de la forme suivante:
